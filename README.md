@@ -11,7 +11,7 @@ Changes I've made (Maryam Teima) & Other Roles:
 - Lighting Artist (Code/Implementation)
 - Dynamic (updatable) Set design (Artifacts & Bbservational Puzzles Set Design)
 - NavMesh (Interactable Door)
-- Sound: Ambience 
+- Sound: Ambience & SFX
 - Index Cards Narration (French) 
 
 Cynthia Wang:
@@ -28,13 +28,13 @@ Sheenie Chan:
 Akhila Sundaram:
 - Backdrop Pieces Modeling + UVs
 - Game Model Textures
-- Sound Designer/Editing
+- Sound Designer/Editing (Englush Narrations, Comic)
 - Script Writer (Plain Language)
 - Physical (Static World) Set Design
 
 Red Levac:
-Cutscene Render Artist
-Character Design
-Narration - Index Cards (English) & Comic (Valentine)
-Set Pieces - Modeller + UVs
+- Cutscene Render Artist
+- Character Design
+- Narration - Index Cards (English) & Comic (Valentine)
+- Set Pieces - Modeller + UVs
 
