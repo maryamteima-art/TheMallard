@@ -199,7 +199,7 @@ export class ArtifactSystem {
           {
             type: 'suitcase',
             digitCount: 4,
-            position: '3.452 0.927 -80.061',
+            position: '3.452 0.927 -82.266',
             htmlElementId: 'suitcase-1',
             geometry: 'primitive:cube;',
             material: 'color:#B2790F; emissive:green; emissiveIntensity:0.7; metalness:0.3; roughness:0.8;',
@@ -220,12 +220,12 @@ export class ArtifactSystem {
           {
             type: 'suitcase',
             digitCount: 4,
-            position: '-4.219 0.970 -80.691',
+            position: '-3.873 0.970 -80.691',
             htmlElementId: 'suitcase-2',
             geometry: 'primitive:cube;',
             material: 'color:#B2790F; emissive:green; emissiveIntensity:0.7; metalness:0.3; roughness:0.8;',
             //Use null if not using a GLTF model
-            modelUrl: "#suitcaseOpen",
+            modelUrl: "compressed/ClosedSuitcase.glb",
             objModelUrl:null, 
             mtlUrl:null,
             //passcode, will be compared with user inputs, if match then the suitcase unlocks
