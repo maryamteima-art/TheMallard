@@ -15,23 +15,22 @@ Changes I've made (Maryam Teima) & Other Roles:
 - Index Cards Narration (French) 
 
 Cynthia Wang:
-UI Illustrations 
-3D Modeller
-Script Writer (Plain Language)
+- UI Illustrations 
+- 3D Modeller
+- Script Writer (Plain Language)
 
 Sheenie Chan:
-3D environement
-Environment Modeller (Train Shell, Large Set Pieces) + UVs 
-Nav Mesh (Train)
-Lighting Artist (Design/Layout)
-Comic Narration (Ming)
+- Environment Modeller (Train Shell, Large Set Pieces) + UVs 
+- Nav Mesh (Train)
+- Lighting Artist (Design/Layout)
+- Comic Narration (Ming)
 
 Akhila Sundaram:
-Backdrop Pieces Modeling + UVs
-Game Model Textures
-Sound Designer/Editing
-Script Writer (Plain Language)
-Physical (Static World) Set Design
+- Backdrop Pieces Modeling + UVs
+- Game Model Textures
+- Sound Designer/Editing
+- Script Writer (Plain Language)
+- Physical (Static World) Set Design
 
 Red Levac:
 Cutscene Render Artist
