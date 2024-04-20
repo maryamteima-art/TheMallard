@@ -35,6 +35,6 @@ Akhila Sundaram:
 Red Levac:
 - Cutscene Render Artist
 - Character Design
-- Narration - Index Cards (English) & Comic (Valentine)
-- Set Pieces - Modeller + UVs
+- Narration: Index Cards (English) & Comic (Valentine)
+- Set Pieces: Modeller + UVs
 
