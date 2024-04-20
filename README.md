@@ -9,7 +9,7 @@ Changes I've made (Maryam Teima) & Other Roles:
 - Cutscenes Drawing & Lineart  
 - Script Writer: Cutscenes (Co-wrote the base/plain language & Edited/Revamped plain language to match 1940s terminologies). Index Cards (Research & Writing)
 - Lighting Artist (Code/Implementation)
-- Dynamic (updatable) Set design (Artifacts & Bbservational Puzzles Set Design)
+- Dynamic (updatable) Set design (Artifacts & Obbservational Puzzles Set Design)
 - NavMesh (Interactable Door)
 - Sound: Ambience & SFX
 - Index Cards Narration (French) 
