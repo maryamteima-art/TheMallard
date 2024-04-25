@@ -5,6 +5,35 @@ import { ArtifactSystem } from './artifactSystem.js';
 import { ControllerSystem } from './controllerSystem.js';
 import { UISystem } from './uiSystem.js';
 
+//Camera Shake A-Frame Component
+AFRAME.registerComponent('camera-shake', {
+    schema: {
+        enabled: {type: 'boolean', default: true},
+        magnitude: {type: 'number', default: 0.05}, // Control the amplitude of the shake
+        duration: {type: 'number', default: 100}, // Duration of one complete up and down cycle
+        offset: {type: 'number', default: 0.794} // Base offset for the camera position
+    },
+    init: function() {
+        this.positionIndex = 0;
+        this.positions = [
+            this.data.offset,  // Middle (adjusted by offset)
+            this.data.offset + this.data.magnitude,  // Up
+            this.data.offset,  // Middle (adjusted by offset)
+            this.data.offset - this.data.magnitude,  // Down
+            this.data.offset   // Middle (reset to start position, adjusted by offset)
+        ];
+    },
+    tick: function(time, timeDelta) {
+        if (!this.data.enabled) return;
+
+        // Calculate the step index based on the duration and the number of positions
+        this.positionIndex = Math.floor((time % (this.data.duration * this.positions.length)) / this.data.duration);
+        const targetY = this.positions[this.positionIndex];
+        
+        // Update the position smoothly
+        this.el.object3D.position.y += (targetY - this.el.object3D.position.y) * 0.1;
+    }
+});
 
 export class GameSystem {
     constructor() {
@@ -34,6 +63,8 @@ export class GameSystem {
         this.uiSystem.initializeCutsceneUI();
         //Timer
         this.startTimer();
+        //Camera Shake start
+        this.initCameraShake();
     }
 
     //Maps "click, keys, swipes" actions to artifact methods
@@ -133,6 +164,25 @@ export class GameSystem {
     getScores() {
         const scores = localStorage.getItem('gameScores');
         return scores ? JSON.parse(scores) : [];
+    }
+
+    //Camera Shakes
+    initCameraShake() {
+        //Get Camera
+        const camera =  CIRCLES.getMainCameraElement();
+        
+        //Controlling shake strength via magnitude
+        camera.setAttribute('camera-shake', {enabled: true, magnitude: 0.05, duration: 100, offset: 0.794});
+    }
+
+    //Controlling the camera shake dynamically
+    //Add this line anywhere to control when to stop or renable shaking of camera 
+    // -->   gameSystem.enableCameraShake(true);
+    enableCameraShake(enable) {
+        const camera = document.querySelector('a-camera');
+        if (camera) {
+            camera.setAttribute('camera-shake', 'enabled', enable);
+        }
     }
     
 }
