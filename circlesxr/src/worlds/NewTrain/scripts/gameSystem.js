@@ -64,7 +64,7 @@ export class GameSystem {
         //Timer
         this.startTimer();
         //Camera Shake start
-        this.initCameraShake();
+        //this.initCameraShake();
     }
 
     //Maps "click, keys, swipes" actions to artifact methods
@@ -172,7 +172,7 @@ export class GameSystem {
         const camera =  CIRCLES.getMainCameraElement();
         
         //Controlling shake strength via magnitude
-        camera.setAttribute('camera-shake', {enabled: true, magnitude: 0.05, duration: 100, offset: 0.794});
+        camera.setAttribute('camera-shake', {enabled: true, magnitude: 0.2, duration: 100, offset: 2});
     }
 
     //Controlling the camera shake dynamically
