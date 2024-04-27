@@ -90,7 +90,7 @@ export class ArtifactSystem {
           ,
         {
             type: 'view-only',
-            position: '4.4 1.5 -45.71',
+            position: '-4.2 2.510 -62',
             rotation: '0 45 0',
             scale: '1 1 1',
             //Remove geometry and material when importing gltf and unhide the URL below
@@ -238,7 +238,7 @@ export class ArtifactSystem {
           },
           {
             type: 'clock',
-            position: '3.448 0.543 -45.94', 
+            position: '-4.629 2.510 -59.412', 
             htmlElementId: 'clock-1',
             //Flag it triggers
             //Passcode
@@ -248,7 +248,7 @@ export class ArtifactSystem {
             lockText: 'Locked! Missing Component!',
             unlockText: 'Interaction Available!',
             itemsToUnlock: [""],
-            faceModelUrl: "compressed/Clock.glb", 
+            faceModelUrl: "compressed/clockNew.glb", 
             handlesModelUrl: "compressed/Handles.glb",
             newFaceModelUrl:"#clockOpen",
             //handles
@@ -304,9 +304,10 @@ export class ArtifactSystem {
         //Make sure ID is unique (not the same as other obstacles or grabbables)
         {
             type: 'obstacle',
-            position: '0 1 -24',
+            position: '0.150 2.387 -23.380',
+            //position: '0 0 0.2',
             htmlElementId: 'door',
-            ////Use null if not using a GLTF model
+            //Use null if not using a GLTF model
             modelUrl: null,
             objModelUrl:null, 
             mtlUrl:null,
@@ -1056,8 +1057,10 @@ class Obstacle extends Artifact{
             //Set the obj-model attribute using the OBJ and MTL files
             obEntity.setAttribute('obj-model', `obj: url(${this.objModelUrl}); mtl: url(${this.mtlUrl})`);
         }else{
-            obEntity.setAttribute('geometry', `primitive: box; depth: 0.5; height: 3; width: 2`);
-            obEntity.setAttribute('material', 'color: blue');
+            obEntity.setAttribute('geometry', `primitive: box; depth: 0.5; height: 3.240; width: 2.5`);
+            obEntity.setAttribute('material', 'color: #dad8d8');
+            obEntity.setAttribute('material', 'opacity', 0.5);
+            obEntity.setAttribute('material', 'roughness', 0.2);
         }
         
         //Position
@@ -1067,7 +1070,8 @@ class Obstacle extends Artifact{
         obEntity.setAttribute('id', this.htmlElementId);
 
         //Adding circlesXR clickable/hover effects
-        obEntity.setAttribute('circles-interactive-object', 'type: outline; hover_scale: 1.05; click_scale: 1.1; enabled: true');
+        obEntity.setAttribute('circles-interactive-object', 'type: highlight; highlight_color: rgb(255, 255, 0); hover_scale: 1.05; click_scale: 1.1; enabled: true');
+        
 
         
         //Add click event listener for click/tap interactions
@@ -1669,7 +1673,7 @@ class Clock extends Artifact{
         const buttonText = document.createElement('a-text');
         buttonText.setAttribute('value', this.types[this.currentTypeIndex].toUpperCase());
         buttonText.setAttribute('align', 'center');
-        buttonText.setAttribute('color', '#000');
+        buttonText.setAttribute('color', '#FFF');
         //Position will be set relative to the selectButton later
         buttonText.setAttribute('position', '0 -0.5 0.3'); 
 
@@ -1695,7 +1699,7 @@ class Clock extends Artifact{
 
         //Scaling whole object
         clockEntity.setAttribute('scale', "0.3 0.3 0.3");
-        clockEntity.setAttribute('rotation', "0 -26.6 0");
+        clockEntity.setAttribute('rotation', "0 90 0");
         
         
         //Append the clock entity to the scene in either case
@@ -1827,7 +1831,7 @@ class Clock extends Artifact{
             
             //Scaling whole object
             clockEntity.setAttribute('scale', "0.3 0.3 0.3");
-            clockEntity.setAttribute('rotation', "0 -26.6 0");
+            clockEntity.setAttribute('rotation', "0 90 0");
             
         } else if (this.newObjModelUrl && this.newMtlUrl) {
             //Set the obj-model attribute using the OBJ and MTL files

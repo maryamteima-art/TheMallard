@@ -11,6 +11,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
   <!--EXTRAS addon for manipulating gltf alphas to indicate selection-->
   <script src="https://unpkg.com/aframe-extras/dist/aframe-extras.min.js"></script>
+  <!--Particle System AFrame-->
+  <script src="https://unpkg.com/aframe-particle-system-component"></script>
+  <!--Post Processing-->
+  <script src="https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Component-Postprocessing/dist/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Component-Postprocessing/dist/post-processing.min.js"></script>
 
   <!-- my scripts -->
   <script type="module" src="/worlds/NewTrain/scripts/game.js"></script>
@@ -21,7 +26,7 @@
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties circles-platform-scene-shadows="updateInterval:10;">
+  <a-scene circles_scene_properties circles-platform-scene-shadows="updateInterval:10;" post-processing="effect: bloom; bloomParams: threshold: 0.5, strength: 0.6, radius: 0.1, exposure: 1; effect: sketchy-pencil">
     <a-assets>
       <img id='skyMap' src='/global/assets/textures/equirectangular/PurpleBlue.jpg' crossorigin="anonymous">
       
@@ -38,13 +43,13 @@
       <audio id="Luggage" src="cards/Luggage.mp3"></audio>
 
       <!--TRAIN ROOM-->
-      <a-asset-item id="train" src="compressed/TrainNewest.glb"></a-asset-item>
+      <a-asset-item id="train" src="compressed/Train.glb"></a-asset-item>
 
       <!--OTHER INTERACTIVE MODELS-->
       <a-asset-item id="suitcaseOpen" src="compressed/OpenSuitcase.glb"></a-asset-item>
       <a-asset-item id="winNecklace" src="compressed/WinNecklace.glb"></a-asset-item>
       <a-asset-item id="loseNecklace" src="compressed/LoseNecklace.glb"></a-asset-item>
-      <a-asset-item id="clockOpen" src="compressed/ClockOpen.glb"></a-asset-item>
+      <a-asset-item id="clockOpen" src="compressed/clockOpenNew.glb"></a-asset-item>
 
 
       <!--BG-->
@@ -62,6 +67,8 @@
     <!--GAME MANAGER-->
     <a-entity game-manager></a-entity>
 
+    <!--PARTICLES-->
+
     <!--NAV MESH-->
     <a-entity id="navmesh1" geometry="primitive: plane" visible='false' rotation="-90 -90 0" scale= "  127.33 10.14 0 "position = "0 0  -46.714" nav-mesh></a-entity>
 
@@ -71,7 +78,7 @@
     <!--OBSERVATIONAL/STATIC PIECES-->
 
     <!--MILK BOTTLES-->
-    <!--<a-entity id = "milk" gltf-model="compressed/MilkBottles.glb" position="-1.3 0.945 -49.209" scale="0.6 0.6 0.6" rotation ="0 90 0"></a-entity>-->
+    <a-entity id = "milk" gltf-model="compressed/MilkBottles.glb" position="-1.3 0.945 -49.209" scale="0.6 0.6 0.6" rotation ="0 90 0"></a-entity>
 
     <!--POSTERS-->
     <a-entity id = "greenPoster" gltf-model="compressed/GreenPoster.glb" position="-5.381 2.597 6.141" rotation="0 90 0"></a-entity>
