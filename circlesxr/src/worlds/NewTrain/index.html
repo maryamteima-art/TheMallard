@@ -15,7 +15,9 @@
   <script src="https://unpkg.com/aframe-particle-system-component"></script>
   <!--Post Processing-->
   <script src="https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Component-Postprocessing/dist/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Component-Postprocessing/dist/post-processing.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/akbartus/A-Frame-Component-Postprocessing/dist/post-processing.min.js"></script>
+  <!--LUT-->
+  <script src="https://cdn.jsdelivr.net/npm/aframe-cubemap-component/dist/aframe-cubemap-component.min.js"></script>
 
   <!-- my scripts -->
   <script type="module" src="/worlds/NewTrain/scripts/game.js"></script>
@@ -26,7 +28,7 @@
   <circles-start-ui/>
 
   <!-- a-scene with 'circles-properties' component [REQUIRED] -->
-  <a-scene circles_scene_properties circles-platform-scene-shadows="updateInterval:10;" post-processing="effect: bloom; bloomParams: threshold: 0.5, strength: 0.6, radius: 0.1, exposure: 1; effect: sketchy-pencil">
+  <a-scene circles_scene_properties circles-platform-scene-shadows="updateInterval:10;">
     <a-assets>
       <img id='skyMap' src='/global/assets/textures/equirectangular/PurpleBlue.jpg' crossorigin="anonymous">
       
@@ -66,8 +68,6 @@
     
     <!--GAME MANAGER-->
     <a-entity game-manager></a-entity>
-
-    <!--PARTICLES-->
 
     <!--NAV MESH-->
     <a-entity id="navmesh1" geometry="primitive: plane" visible='false' rotation="-90 -90 0" scale= "  127.33 10.14 0 "position = "0 0  -46.714" nav-mesh></a-entity>
