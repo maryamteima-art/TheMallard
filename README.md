@@ -2,7 +2,7 @@ Framework Forked from PlumCantaloupe/circlesxr
 "A work-in-progress framework that aims to bring together multi-user VR experiences in education using WebXR."
 
 Changes I've made (Maryam Teima) & Other Roles: 
-- All programming in NewTrain World using A Frame and CirclesXR programming language (Js, Html). 
+- All programming in NewTrain World (src --> scripts folder + index.html) using A Frame and CirclesXR programming language (Js, Html). 
 - Chandelier 3D model
 - Curtains 3D model 
 - Cyphers linear progression (Created the base model which was further branched upon by groupmates and myself)
